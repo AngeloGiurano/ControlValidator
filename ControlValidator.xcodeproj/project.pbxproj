@@ -10,7 +10,7 @@
 		86E63BB31DD0B4D4008B37CD /* ControlValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E63BA91DD0B4D4008B37CD /* ControlValidator.framework */; };
 		86E63BB81DD0B4D4008B37CD /* ControlValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E63BB71DD0B4D4008B37CD /* ControlValidatorTests.swift */; };
 		86E63BBA1DD0B4D4008B37CD /* ControlValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E63BAC1DD0B4D4008B37CD /* ControlValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		86E63BC41DD0B96C008B37CD /* ControlTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E63BC31DD0B96C008B37CD /* ControlTextField.swift */; };
+		86E63BC41DD0B96C008B37CD /* ValidableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E63BC31DD0B96C008B37CD /* ValidableTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +30,7 @@
 		86E63BB21DD0B4D4008B37CD /* ControlValidatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControlValidatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E63BB71DD0B4D4008B37CD /* ControlValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlValidatorTests.swift; sourceTree = "<group>"; };
 		86E63BB91DD0B4D4008B37CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86E63BC31DD0B96C008B37CD /* ControlTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlTextField.swift; sourceTree = "<group>"; };
+		86E63BC31DD0B96C008B37CD /* ValidableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidableTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 			children = (
 				86E63BAC1DD0B4D4008B37CD /* ControlValidator.h */,
 				86E63BAD1DD0B4D4008B37CD /* Info.plist */,
-				86E63BC31DD0B96C008B37CD /* ControlTextField.swift */,
+				86E63BC31DD0B96C008B37CD /* ValidableTextField.swift */,
 			);
 			path = ControlValidator;
 			sourceTree = "<group>";
@@ -199,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86E63BC41DD0B96C008B37CD /* ControlTextField.swift in Sources */,
+				86E63BC41DD0B96C008B37CD /* ValidableTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

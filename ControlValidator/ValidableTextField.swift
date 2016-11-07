@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ControlTextField: UITextField {
+class ValidableTextField: UITextField {
     
     //    typealias ValidationRule = () -> Bool
     var errorplaceHolder: UILabel?
