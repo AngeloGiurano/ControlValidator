@@ -29,7 +29,7 @@ class ValidableTextField: UITextField {
         super.draw(rect)
         let border = CALayer()
         let width = CGFloat(0.55)
-        border.borderColor = UIColor.gray
+        border.borderColor = UIColor.gray.cgColor
         border.frame = CGRect(x: 0, y: rect.size.height - width, width:  rect.size.width, height: rect.size.height)
         
         border.borderWidth = width
@@ -157,14 +157,14 @@ enum BasicValidationRules: ValidationRuleType {
 func isValidEmail(string: String) -> Bool {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    let result = emailTest.evaluateWithObject(string)
+    let result = emailTest.evaluate(with: string)
     return result
 }
 
 func isValidPhoneNumber(string: String) -> Bool {
     let PHONE_REGEX = "^\\d{1,20}$"
     let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-    let result =  phoneTest.evaluateWithObject(string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()))
+    let result =  phoneTest.evaluate(with: string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
     return result
 }
 
@@ -172,14 +172,14 @@ func isValidPassword(string: String) -> Bool {
     let length = 8
     let capitalLetterRegEx  = ".*[A-Z]+.*"
     let texttest = NSPredicate(format:"SELF MATCHES %@", capitalLetterRegEx)
-    let capitalresult = texttest.evaluateWithObject(string)
+    let capitalresult = texttest.evaluate(with: string)
     
     return capitalresult && string.characters.count > length
 }
 
 
 func isNonEmpty(string: String) -> Bool {
-    return string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) != ""
+    return string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != ""
 }
 
 func isMinLength(string: String) -> Bool {
