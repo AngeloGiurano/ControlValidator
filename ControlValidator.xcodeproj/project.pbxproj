@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C5D451A1DD0C6F400A7D99F /* ControlValidatorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45191DD0C6F400A7D99F /* ControlValidatorTypes.swift */; };
+		7C5D451C1DD0C91400A7D99F /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D451B1DD0C91400A7D99F /* ValidationRule.swift */; };
+		7C5D451F1DD0CF2C00A7D99F /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D451E1DD0CF2C00A7D99F /* EmailRule.swift */; };
+		7C5D45211DD0D16E00A7D99F /* PhoneRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45201DD0D16E00A7D99F /* PhoneRule.swift */; };
+		7C5D45231DD0D87C00A7D99F /* testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45221DD0D87C00A7D99F /* testing.swift */; };
+		7CD472191DD1E4DC007D3860 /* ValidationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD472181DD1E4DC007D3860 /* ValidationProtocols.swift */; };
 		86E63BB31DD0B4D4008B37CD /* ControlValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E63BA91DD0B4D4008B37CD /* ControlValidator.framework */; };
 		86E63BB81DD0B4D4008B37CD /* ControlValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E63BB71DD0B4D4008B37CD /* ControlValidatorTests.swift */; };
 		86E63BBA1DD0B4D4008B37CD /* ControlValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 86E63BAC1DD0B4D4008B37CD /* ControlValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C5D45191DD0C6F400A7D99F /* ControlValidatorTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlValidatorTypes.swift; sourceTree = "<group>"; };
+		7C5D451B1DD0C91400A7D99F /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
+		7C5D451E1DD0CF2C00A7D99F /* EmailRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
+		7C5D45201DD0D16E00A7D99F /* PhoneRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneRule.swift; sourceTree = "<group>"; };
+		7C5D45221DD0D87C00A7D99F /* testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testing.swift; sourceTree = "<group>"; };
+		7CD472181DD1E4DC007D3860 /* ValidationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationProtocols.swift; sourceTree = "<group>"; };
 		86E63BA91DD0B4D4008B37CD /* ControlValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ControlValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E63BAC1DD0B4D4008B37CD /* ControlValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlValidator.h; sourceTree = "<group>"; };
 		86E63BAD1DD0B4D4008B37CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C5D451D1DD0C91A00A7D99F /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				7C5D451B1DD0C91400A7D99F /* ValidationRule.swift */,
+				7C5D451E1DD0CF2C00A7D99F /* EmailRule.swift */,
+				7C5D45201DD0D16E00A7D99F /* PhoneRule.swift */,
+			);
+			name = Rules;
+			sourceTree = "<group>";
+		};
 		86E63B9F1DD0B4D3008B37CD = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +97,13 @@
 		86E63BAB1DD0B4D4008B37CD /* ControlValidator */ = {
 			isa = PBXGroup;
 			children = (
+				7C5D451D1DD0C91A00A7D99F /* Rules */,
 				86E63BAC1DD0B4D4008B37CD /* ControlValidator.h */,
 				86E63BAD1DD0B4D4008B37CD /* Info.plist */,
 				86E63BC31DD0B96C008B37CD /* ValidableTextField.swift */,
+				7C5D45191DD0C6F400A7D99F /* ControlValidatorTypes.swift */,
+				7CD472181DD1E4DC007D3860 /* ValidationProtocols.swift */,
+				7C5D45221DD0D87C00A7D99F /* testing.swift */,
 				86E63BC71DD0BEE2008B37CD /* Extensions */,
 			);
 			path = ControlValidator;
@@ -212,6 +238,12 @@
 			files = (
 				86E63BC61DD0BEDE008B37CD /* String+Localized.swift in Sources */,
 				86E63BC41DD0B96C008B37CD /* ValidableTextField.swift in Sources */,
+				7C5D45231DD0D87C00A7D99F /* testing.swift in Sources */,
+				7C5D451C1DD0C91400A7D99F /* ValidationRule.swift in Sources */,
+				7CD472191DD1E4DC007D3860 /* ValidationProtocols.swift in Sources */,
+				7C5D451A1DD0C6F400A7D99F /* ControlValidatorTypes.swift in Sources */,
+				7C5D45211DD0D16E00A7D99F /* PhoneRule.swift in Sources */,
+				7C5D451F1DD0CF2C00A7D99F /* EmailRule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +447,7 @@
 				86E63BBF1DD0B4D4008B37CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86E63BC01DD0B4D4008B37CD /* Build configuration list for PBXNativeTarget "ControlValidatorTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +456,7 @@
 				86E63BC21DD0B4D4008B37CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
