@@ -8,19 +8,22 @@
 
 import Foundation
 
-class PhoneRule: ValidationRule {
+class PhoneRule: RegexRule {
     
-    func validate(_ string: String?) -> Bool {
-        
-        if let text = string{
-            let PHONE_REGEX = "^\\d{1,20}$"
-            let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-            let result =  phoneTest.evaluate(with: text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
-            return result
-        }else{
-            return false
-        }
+    init() {
+        super.init(regexRule: "^\\d{1,20}$")
     }
- 
+    
+//    func validate(_ string: String?) -> Bool {
+//        
+//        if let text = string{
+//            let PHONE_REGEX = "^\\d{1,20}$"
+//            let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+//            let result =  phoneTest.evaluate(with: text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
+//            return result
+//        }else{
+//            return false
+//        }
+//    }
 
 }

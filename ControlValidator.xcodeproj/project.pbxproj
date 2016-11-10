@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C5D451A1DD0C6F400A7D99F /* ControlValidatorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45191DD0C6F400A7D99F /* ControlValidatorTypes.swift */; };
-		7C5D451C1DD0C91400A7D99F /* ValidationRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D451B1DD0C91400A7D99F /* ValidationRule.swift */; };
+		7C4B592A1DD32BA400C88BFA /* NotEmptyRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4B59291DD32BA400C88BFA /* NotEmptyRule.swift */; };
+		7C4B592C1DD3391C00C88BFA /* MinSignRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4B592B1DD3391C00C88BFA /* MinSignRule.swift */; };
+		7C4B592E1DD33E1F00C88BFA /* RegexRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C4B592D1DD33E1F00C88BFA /* RegexRule.swift */; };
+		7C5D451A1DD0C6F400A7D99F /* Definitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45191DD0C6F400A7D99F /* Definitions.swift */; };
+		7C5D451C1DD0C91400A7D99F /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D451B1DD0C91400A7D99F /* Rule.swift */; };
 		7C5D451F1DD0CF2C00A7D99F /* EmailRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D451E1DD0CF2C00A7D99F /* EmailRule.swift */; };
 		7C5D45211DD0D16E00A7D99F /* PhoneRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45201DD0D16E00A7D99F /* PhoneRule.swift */; };
 		7C5D45231DD0D87C00A7D99F /* testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5D45221DD0D87C00A7D99F /* testing.swift */; };
@@ -31,8 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C5D45191DD0C6F400A7D99F /* ControlValidatorTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlValidatorTypes.swift; sourceTree = "<group>"; };
-		7C5D451B1DD0C91400A7D99F /* ValidationRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidationRule.swift; sourceTree = "<group>"; };
+		7C4B59291DD32BA400C88BFA /* NotEmptyRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmptyRule.swift; sourceTree = "<group>"; };
+		7C4B592B1DD3391C00C88BFA /* MinSignRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinSignRule.swift; sourceTree = "<group>"; };
+		7C4B592D1DD33E1F00C88BFA /* RegexRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexRule.swift; sourceTree = "<group>"; };
+		7C5D45191DD0C6F400A7D99F /* Definitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Definitions.swift; sourceTree = "<group>"; };
+		7C5D451B1DD0C91400A7D99F /* Rule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		7C5D451E1DD0CF2C00A7D99F /* EmailRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailRule.swift; sourceTree = "<group>"; };
 		7C5D45201DD0D16E00A7D99F /* PhoneRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneRule.swift; sourceTree = "<group>"; };
 		7C5D45221DD0D87C00A7D99F /* testing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testing.swift; sourceTree = "<group>"; };
@@ -69,9 +75,12 @@
 		7C5D451D1DD0C91A00A7D99F /* Rules */ = {
 			isa = PBXGroup;
 			children = (
-				7C5D451B1DD0C91400A7D99F /* ValidationRule.swift */,
+				7C5D451B1DD0C91400A7D99F /* Rule.swift */,
 				7C5D451E1DD0CF2C00A7D99F /* EmailRule.swift */,
 				7C5D45201DD0D16E00A7D99F /* PhoneRule.swift */,
+				7C4B59291DD32BA400C88BFA /* NotEmptyRule.swift */,
+				7C4B592B1DD3391C00C88BFA /* MinSignRule.swift */,
+				7C4B592D1DD33E1F00C88BFA /* RegexRule.swift */,
 			);
 			name = Rules;
 			sourceTree = "<group>";
@@ -101,7 +110,7 @@
 				86E63BAC1DD0B4D4008B37CD /* ControlValidator.h */,
 				86E63BAD1DD0B4D4008B37CD /* Info.plist */,
 				86E63BC31DD0B96C008B37CD /* ValidableTextField.swift */,
-				7C5D45191DD0C6F400A7D99F /* ControlValidatorTypes.swift */,
+				7C5D45191DD0C6F400A7D99F /* Definitions.swift */,
 				7CD472181DD1E4DC007D3860 /* ValidationProtocols.swift */,
 				7C5D45221DD0D87C00A7D99F /* testing.swift */,
 				86E63BC71DD0BEE2008B37CD /* Extensions */,
@@ -237,11 +246,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				86E63BC61DD0BEDE008B37CD /* String+Localized.swift in Sources */,
+				7C4B592A1DD32BA400C88BFA /* NotEmptyRule.swift in Sources */,
 				86E63BC41DD0B96C008B37CD /* ValidableTextField.swift in Sources */,
+				7C4B592E1DD33E1F00C88BFA /* RegexRule.swift in Sources */,
 				7C5D45231DD0D87C00A7D99F /* testing.swift in Sources */,
-				7C5D451C1DD0C91400A7D99F /* ValidationRule.swift in Sources */,
+				7C5D451C1DD0C91400A7D99F /* Rule.swift in Sources */,
+				7C4B592C1DD3391C00C88BFA /* MinSignRule.swift in Sources */,
 				7CD472191DD1E4DC007D3860 /* ValidationProtocols.swift in Sources */,
-				7C5D451A1DD0C6F400A7D99F /* ControlValidatorTypes.swift in Sources */,
+				7C5D451A1DD0C6F400A7D99F /* Definitions.swift in Sources */,
 				7C5D45211DD0D16E00A7D99F /* PhoneRule.swift in Sources */,
 				7C5D451F1DD0CF2C00A7D99F /* EmailRule.swift in Sources */,
 			);

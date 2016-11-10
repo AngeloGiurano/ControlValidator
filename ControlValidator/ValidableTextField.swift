@@ -12,12 +12,29 @@ import UIKit
 
 public class ValidableTextField: UITextField, ValidationProtocol {
     
-    public var validationRules: [ValidationRuleType]?
-    @IBOutlet public weak var validationDelegate : ValidationDelegat?
+    public var validationRules: [ValidationRule]?
+    @IBOutlet public weak var validationDelegate : ValidationDelegate?
+    private var  valid : Bool?
+    public var isValid : Bool{
+        
+        get{
+            
+            guard let _ = valid  else {
+                
+               valid = validate()
+               
+                return valid!
+                
+            }
+            
+            return valid!
+            
+        }
+    }
+    
     
     var errorplaceHolder: UILabel?
     var labelerror: UILabel?
-    var isValid: Bool = false
     
     /*
      // Only override drawRect: if you perform custom drawing.
@@ -53,46 +70,13 @@ public class ValidableTextField: UITextField, ValidationProtocol {
     
     
     func textFieldDidChange() {
-        let validationResult = validate()
         
+        if validate(){
+            self.backgroundColor = UIColor.clear
+        }else{
+            self.backgroundColor = UIColor.red
+        }
         
-        
-//        ///will change information schemes - like somting bacground color, bordering text etc.
-//        if let error = validationResult.error, !validationResult.success {
-//            self.isValid = false
-//            
-//            if labelerror == nil {
-//                labelerror = UILabel(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: errorplaceHolder!.frame.height))
-//            }
-//            
-//            labelerror?.text = error
-//            labelerror?.numberOfLines = 0
-//            labelerror?.font = errorplaceHolder?.font
-//            labelerror?.textColor = UIColor.red
-//            labelerror?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//            labelerror?.sizeToFit()
-//            labelerror?.backgroundColor = UIColor.white
-//            
-//            errorplaceHolder?.textColor = UIColor.clear
-//            errorplaceHolder?.addSubview(labelerror!)
-//            errorplaceHolder?.bringSubview(toFront: labelerror!)
-//            
-//            
-//            UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.5, options: [], animations: {
-//                self.labelerror!.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-//            }, completion: {
-//                _ in
-//                self.labelerror!.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//            })
-//            
-//            return
-//        } else {
-//            isValid = true
-//            if let labelerror = labelerror {
-//                errorplaceHolder?.textColor = UIColor.red
-//                labelerror.removeFromSuperview()
-//            }
-//        }
     }
     
 //    func validate() -> (ValidationRuleProtocol?) {
@@ -114,51 +98,13 @@ public class ValidableTextField: UITextField, ValidationProtocol {
 //        }
 //    }
 
+    
+    public func validate(byRule rule: ValidationRule) -> Bool {
+        
+        return rule.validationRule.validate(text)
 
-    public func validate() -> Bool {
+    }
 
-        
-        if let rules = validationRules {
-            
-            return validate(byRules: rules)
-            
-        }else{
-            
-            return false
-            
-        }
-        
-    }
     
-    public func validate(byRule: ValidationRuleType)->Bool{
-        
-        //testing endpoint by one rule
-        
-        return true
-    }
-    
-    
-    public func validate(byRules: [ValidationRuleType])->Bool{
-        
-        if let rules = validationRules {
-            
-            for rule in rules{
-                
-                if !validate(byRule: rule){
-                    return false
-                }
-                
-            }
-     
-            return true
-            
-        }else{
-        
-            return true
-        
-        }
-    
-    }
     
 }
-

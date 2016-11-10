@@ -15,8 +15,9 @@ func testing(test: String) -> String? {
     
     validableText.text = "Test text"
 
-    validableText.validationRules = [BasicValidationRules.email, BasicValidationRules.nonEmpty, BasicValidationRules.customRegexValidation("sfasdF")]
+    validableText.validationRules = [ValidationRule.email, ValidationRule.nonEmpty, ValidationRule.regexValidation("sfasdF")]
 
+    
     return validableText.text
     
 }
